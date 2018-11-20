@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+  helper_method :current_user, :logged_in?
 
   def login(user)
     session[:session_token] = user.reset_session_token!
@@ -16,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    # come back here
+    redirect_to new_session_url unless logged_in?
   end
 
   def logged_in?
