@@ -1,0 +1,18 @@
+<h1>Create a New Posts</h1>
+
+<form action="<%= sub_posts_url(@sub) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>
+    Title
+    <input type="text" name="post[title]" value="">
+  </label>
+  <label>
+    URL
+    <input type="text" name="post[url]" value="">
+  </label>
+  <label>
+    Content
+    <textarea name="post[content]" rows="8" cols="80"></textarea>
+  </label>
+  <input type="submit" name="" value="Create Post">
+</form>

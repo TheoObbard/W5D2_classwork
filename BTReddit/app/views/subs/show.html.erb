@@ -6,3 +6,11 @@
 <% end %>
 
 <%= link_to "Back to all subs", subs_url %>
+
+<h2>Posts</h2>
+<%= link_to "Create Post", new_sub_post_url(@sub) %>
+<ul>
+<% @sub.posts.each do |post| %>
+  <li><a href="<%= sub_post_url(@sub, post) %>">(null) <%= post.title %></a></li>
+<% end %>
+</ul>

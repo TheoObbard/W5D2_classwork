@@ -1,0 +1,13 @@
+<h1><%= @post.title %> by <%= @post.author.username %></h1>
+<p><%= @post.content %></p>
+
+<% if @post.author == current_user %>
+  <%= link_to "Edit post", edit_sub_post_url(@post.sub, @post)%>
+<% end %>
+
+<h2>Comments</h2>
+
+<%= link_to "Comment on this post", "#" %>
+
+
+<%= link_to "Back to sub", sub_url(@post.sub) %>
