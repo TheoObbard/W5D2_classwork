@@ -1,0 +1,16 @@
+/* PHASE 2: Notifications */
+
+.badge {
+  border-radius: 50%;
+  background-color: black;
+  padding: 4px 8px;
+}
+
+.notifications {
+  position: relative;
+
+}
+
+.notifications li {
+  top: 100px;
+}
