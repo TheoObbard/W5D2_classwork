@@ -47,4 +47,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def is_moderator?(sub)
+    self.subs.include?(sub)
+  end
+
 end
