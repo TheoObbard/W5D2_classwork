@@ -7,7 +7,16 @@
 
 <h2>Comments</h2>
 
-<%= link_to "Comment on this post", "#" %>
+<%= link_to "Comment on this post", new_post_comment_url(@post) %>
+
+<ul>
+  <% @post.comments.each do |comment| %>
+    <li><strong><%=" #{comment.author.username}, "%></strong><br>
+      <%= comment.content %>
+    </li>
+  <% end %>
+</ul>
+
 
 <h2>Subs</h2>
 
