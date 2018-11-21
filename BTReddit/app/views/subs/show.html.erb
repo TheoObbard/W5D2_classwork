@@ -8,9 +8,9 @@
 <%= link_to "Back to all subs", subs_url %>
 
 <h2>Posts</h2>
-<%= link_to "Create Post", new_sub_post_url(@sub) %>
+<%= link_to "Create Post", new_post_url %>
 <ul>
 <% @sub.posts.each do |post| %>
-  <li><a href="<%= sub_post_url(@sub, post) %>">(null) <%= post.title %></a></li>
+  <li><a href="<%= post_url(post) %>">(null) <%= post.title %></a></li>
 <% end %>
 </ul>

@@ -2,12 +2,17 @@
 <p><%= @post.content %></p>
 
 <% if @post.author == current_user %>
-  <%= link_to "Edit post", edit_sub_post_url(@post.sub, @post)%>
+  <%= link_to "Edit post", edit_post_url(@post)%>
 <% end %>
 
 <h2>Comments</h2>
 
 <%= link_to "Comment on this post", "#" %>
 
+<h2>Subs</h2>
 
-<%= link_to "Back to sub", sub_url(@post.sub) %>
+<ul>
+  <% @post.subs.each do |sub| %>
+    <li><%= link_to sub.title, sub_url(sub) %></li>
+  <% end %>
+</ul>

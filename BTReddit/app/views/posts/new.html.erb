@@ -1,6 +1,6 @@
-<h1>Create a New Posts</h1>
+<h1>Create a New Post</h1>
 
-<form action="<%= sub_posts_url(@sub) %>" method="post">
+<form action="<%= posts_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label>
     Title
@@ -14,5 +14,17 @@
     Content
     <textarea name="post[content]" rows="8" cols="80"></textarea>
   </label>
+
+  <h2>Subs</h2>
+  <ul>
+  <% Sub.all.each do |sub| %>
+    <li>
+      <label for=""><%= sub.title %>
+        <input type="checkbox" name="post[sub_ids][]" value="<%= sub.id %>">
+      </label>
+    </li>
+  <% end %>
+  </ul>
+  <input type="hidden" name="post[sub_ids][]" value="">
   <input type="submit" name="" value="Create Post">
 </form>
