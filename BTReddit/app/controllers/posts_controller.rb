@@ -20,7 +20,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.author_id = current_user.id
     @post.sub_ids = params[:post][:sub_ids]
-    fail
+    # fail
+
     if @post.save
       redirect_to post_url(@post)
     else
