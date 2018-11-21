@@ -11,8 +11,8 @@
 
 <ul>
   <% @post.comments.each do |comment| %>
-    <li><strong><%=" #{comment.author.username}, "%></strong><br>
-      <%= comment.content %>
+    <li>
+      <%= link_to comment.title, comment_url(comment) %>
     </li>
   <% end %>
 </ul>
